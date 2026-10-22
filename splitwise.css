@@ -1,0 +1,358 @@
+:root {
+    --bg: #f4f6f2;
+    --card: #ffffff;
+    --text: #20251f;
+    --muted: #858b7e;
+    --border: #dfe4d9;
+    --primary: #2fc3ae;
+    --primary-hover: #24a994;
+    --input: #f7f8f5;
+    --danger: #e45b5b;
+}
+
+body.dark {
+    --bg: #11130f;
+    --card: #1b1e17;
+    --text: #f4f5ef;
+    --muted: #a6aa9b;
+    --border: #34392d;
+    --primary: #35c5b0;
+    --primary-hover: #27aa98;
+    --input: #22261e;
+    --danger: #ff7777;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.25s, color 0.25s;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0 0 5px;
+    font-size: 23px;
+    font-weight: 700;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+
+header p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.theme-btn {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--text);
+}
+
+.clock-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    margin-bottom: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.clock-card p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.clock-card h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.card {
+    margin-bottom: 16px;
+    padding: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.card h2 {
+    margin: 0 0 16px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.form-group {
+    min-width: 0;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgb(53 197 176 / 12%);
+}
+
+.form-group input::placeholder {
+    color: var(--muted);
+}
+
+.names-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.names-grid input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--input);
+    color: var(--text);
+    font-size: 13px;
+}
+
+.names-grid input:focus {
+    outline: 1px solid var(--primary);
+    border-color: var(--primary);
+}
+
+.primary-btn,
+.reset-btn {
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #10201c;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+.reset-btn {
+    margin-left: 5px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.reset-btn:hover {
+    background: var(--input);
+}
+
+.theme-btn:hover,
+.delete-btn:hover {
+    opacity: 0.85;
+}
+
+#expenseSummary {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.result-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 4px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-row span:first-child {
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+.amount {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.history-header h2 {
+    margin: 0;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--danger);
+    font-size: 12px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item strong {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.history-item p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.empty {
+    padding: 12px 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 14px;
+    }
+    .card {
+        padding: 16px;
+    }
+    .names-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding: 10px;
+    }
+    .card {
+        padding: 13px;
+    }
+    .form-grid {
+        gap: 8px;
+    }
+    .form-group input {
+        padding: 9px;
+        font-size: 13px;
+    }
+    .names-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+    }
+    .clock-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .clock-card h3 {
+        text-align: left;
+        font-size: 12px;
+    }
+    .primary-btn,
+    .reset-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
